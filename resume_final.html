@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #fafafa;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #222;
+            line-height: 1.6;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 30mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 600;
+        }
+        h1 { font-size: 32px; letter-spacing: 1px; }
+        h2 {
+            margin-top: 25px;
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            display: inline-block;
+            padding-bottom: 3px;
+            font-size: 20px;
+        }
+        .section { margin-top: 25px; }
+        .flex { display: flex; justify-content: space-between; }
+        .nav-fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .nav-btn, .btn {
+            padding: 8px 14px;
+            border: none;
+            background: #4a90e2;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn.back { margin-top: 20px; display: inline-block; }
+        .highlight:hover {
+            background: #4a90e2;
+            color: white;
+            transition: 0.3s;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-fixed">
+        <button class="nav-btn" data-page="page1">Page 1</button>
+        <button class="nav-btn" data-page="page2">Page 2</button>
+    </div>
+
+    <!-- PAGE 1 -->
+    <div class="page fade" id="page1">
+        <h1 class="highlight">Kriti Kumari</h1>
+        <p>Email • Phone • Portfolio</p>
+
+        <div class="section">
+            <h2>Profile</h2>
+            <p>A motivated CSE student with strong programming and full‑stack development skills. Passionate about building clean, modern, and interactive web applications.</p>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+
+            <div class="flex">
+                <div>
+                    <h3>10th Grade – Sacred Heart School</h3>
+                    <p>Percentage: 97%</p>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div>
+                    <h3>12th Grade – Greenland Public School</h3>
+                    <p>Percentage: 85%</p>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div>
+                    <h3>B.E. – Computer Science Engineering</h3>
+                    <p>CMR Institute of Technology</p>
+                </div>
+                <p>2023–2027 • CGPA: 8.0</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>MongoDB</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page fade" id="page2">
+        <h2>Projects</h2>
+
+        <div class="section">
+            <h3 class="highlight">Portfolio Website</h3>
+            <p>Designed and built a clean personal portfolio using HTML, CSS, and jQuery with animations and multi‑page navigation.</p>
+        </div>
+
+        <div class="section">
+            <h3 class="highlight">Weather App</h3>
+            <p>Created a weather forecasting app using JavaScript API integration with dynamic UI elements.</p>
+        </div>
+
+        <h2>Experience</h2>
+        <div class="section">
+            <h3>Intern / Student Developer</h3>
+            <div class="flex">
+                <p>Company / Institution</p>
+                <p>Year</p>
+            </div>
+            <p>Worked on web development tasks, learned collaborative tools, and implemented small‑scale projects.</p>
+        </div>
+
+        <a class="btn back" href="index.html">Back to Home</a>
+    </div>
+
+</body>
+</html>
