@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js" ></script>
+    <script src="jquery.animate-colors-min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Append to para & list</h1>
+    <p id="para">JQuery was created by John Resig</p>
+    <ul id="lst">
+        <li>DOM Manipulation</li>
+    </ul>
+    <button id="btappend">Append</button>
+    
+    <h1>Change state using Animate </h1>
+    <div id="divstate" style="border:1px solid black; height: 100px;width: 200px;">JQuery can be used to change state.</div>
+    
+    <button id="btstate">Change state</button>
+    <button id="btnstate">change height</button>
+    <script>
+        $("btappend").click(function(){
+        $("#para").append("<br>The features are");
+        $("#lst").append("<li>Animation</li>");
+            
+        });
+        $("#btstate").click(function(){
+            $("#divstate").animate(
+                {backgroundColor:"blue"},"slow");
+            });
+            $("#btnstate").click(function(){
+            $("#divstate").animate(
+                {height:"200px"},"slow");
+            });
+
+
+    </script>
+    <h1>Change color of div that is animated</h1>
+    <div id="divcolor"></div>
+    <input type="color" id="ipcolor">
+    <button id="btanim">Animate</button>   
+</body>
+</html>

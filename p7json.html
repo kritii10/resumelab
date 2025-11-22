@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON CSV, HASH</title>
+    <style>
+     div{
+        border: solid black 2px;
+        height:300px;
+        width: 500px;
+     }
+    </style>
+</head>
+<body>
+    <h1>Convert json text to javascript object</h1>
+    <button onclick="cjson()">Convert JSON</button>
+    <div id="convjson"></div>
+<h1>convert json to date</h1>
+<button onclick="fdate()">Fdate</button>
+<div id="jsondate">
+
+</div>
+<h1>convert json to csv and csv to json</h1>
+<button onclick="csv()" id="buttoncsv">Convert to CSV</button>
+<button onclick="json()" id="buttonjson" disabled>Convert to JSON</button>
+<div id="jsoncsv">
+
+</div>
+
+
+   <h1>Hash</h1>
+   <label for="ipStr">Enter the string</label>
+   <input type="text" id="ipStr">
+   <button onclick="hash()">Convert Hash</button>
+   <div id="divhash">
+
+   </div>
+   <script>
+    var data=[
+        {"album":"abc","year":"2025","genre":"popmusic", "releasedate":"2025-10-25"},{"album":"abcd","year":"2026","genre":"popmusic", "releasedate":"2025-10-25"}
+    ]
+   let text='{"Linkinp":{"album":"abcd","year":"2025", "genre":"popmusic", "releasedate":"2025-10-25"}}'
+ 
+   function cjson(){
+    var x=JSON.parse(text);
+    convjson.innerText=x.Linkinp.album;
+    convjson.innerText+="\n"+x.Linkinp.year;
+    convjson.innerText+="\n"+x.Linkinp.genre;
+    convjson.innerText+="\n"+x.Linkinp.releasedate;
+    }
+    
+    function fdate(){
+        let a=JSON.parse(text);
+        jsondate.innerText=a.Linkinp.releasedate;
+        a.Linkinp.releasedate= new Date(a.Linkinp.releasedate);
+        var options={year:'numeric',month:'long', day:'numeric'};
+        jsondate.innerText=a.Linkinp.releasedate.toLocaleString("en-US",options);
+
+    }
+    function csv(){
+        // alert(Object.keys(data[0]));
+        // alert(Object.values(data[0]));
+        jsoncsv.innerText+=Object.keys(data[0])
+        for(var i=0;i<data.length;i++)
+          jsoncsv.innerText+="\n"+Object.values(data[i])
+         buttoncsv.disabled=true;
+         buttonjson.disabled=false;
+    }
+    function json(){
+        data.push({"album":"abc","year":"2025","genre":"popmusic", "releasedate":"2025-10-25"})
+        // alert (JSON.stringify(data))
+        var csvtxt=jsoncsv.innerText
+        var arr=csvtxt.split("\n")
+        var headers=arr[0].split(",")
+        let jsonobj=[];
+        
+        for(let i=1;i<arr.length;i++){
+            //start with i=1; i=0 had headers
+            values=arr[i].split(",")
+            let obj={}
+            for(let j=0;j<values.length;j++)
+           {obj[headers[j]]=values[j];
+           }
+            jsonobj.push(obj);
+            jsoncsv.innerText=JSON.stringify(jsonobj)
+            buttoncsv.disabled=false
+            buttonjson.disabled=true
+
+           }
+        }
+        function hash(){
+            const a=ipStr.value;
+            let hash=0;
+            for(let i=0;i<a.length;i++)
+            { char= a.charCodeAt(i)
+                hash=((hash<<5)-hash)+char;
+                hash=hash&hash;
+            }
+            divhash.innerText=hash;
+        }
+    
+   </script> 
+</body>
+</html>

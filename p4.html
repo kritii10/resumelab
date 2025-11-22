@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1{
+         text-align: center;
+         background-color: rgb(178, 204, 178);
+         margin: auto;
+         margin-bottom: 10px;
+
+        }
+        table{
+width: 800px;
+margin:auto;
+background-color: #5fa07f;
+
+        }
+        th,td{
+            padding:5px 10px;
+        }
+        label{
+           font-family:Verdana, Geneva, Tahoma, sans-serif;
+           
+           font-style: italic;
+
+        }
+        input[type=submit],input[type=reset]{
+          padding: 10px 10px;
+          font-size: 15px;
+          font-style: normal;
+          background-color: rgb(93, 107, 107);
+          
+
+        }
+        
+    </style>
+    
+    <title>Registration form Ecosummit</title>
+</head>
+<body>
+    <h1>Registration form- Ecosummit</h1>
+    <table>
+        <form method="get" action="">
+            <tr>
+                <th><label for="pname">Name of participant</label>
+                </th>
+                <td><input type="text" name="pname" id="pname"></td>
+                
+            </tr>
+            <tr>
+                <th><label for="email">Email</label>
+                </th>
+                <td><input type="email" name="email" id="email"></td>
+                
+            </tr>
+            <tr>
+                <th><label for="phone">Phone number</label>
+                </th>
+                <td><input type="tel" name="phone" id="phone"></td>
+                
+            </tr>
+            <tr>
+                <th><label for="Password">Password</label>
+                </th>
+                <td><input type="text" name="password" id="password"></td>
+                
+            </tr>
+            <tr>
+                <th><label for="City">City of participant</label>
+                </th>
+                <td><select name="city" id="city">
+                    <option value="1">Bengaluru</option>
+                    <option value="2">Mysore</option>
+                    <option value="3">Ranchi</option>
+                    <option value="4">Delhi</option>
+                    </select>
+                </td>
+                <tr>
+                <th><label for="Student">Number of students</label>
+                </th>
+                <td><input type="number" name="student" id="student"></td>
+                
+            </tr>
+            <tr>
+                <th><label for="Price">Price</label>
+                </th>
+                <td><input type="number" min="500" max="2000" step="100" name="price " id="price">
+                
+                </td>
+             
+            </tr>
+            <tr>
+                <th><label for="Payment">Payment mode</label>
+                </th>
+                <td><input type="radio" name="payment" id="payment" value="dcard"> Debit card
+                <input type="radio" name="payment" id="payment" value="upi">UPI
+                </td>
+            </tr>
+            <tr>
+                <th><label for="Arrival">Date of arrival</label>
+                </th>
+                <td><input type="datetime" name="arrival " id="arrival">
+                </td>             
+            </tr>
+            <tr>
+                <th><label for="Remarks">Remarks</label>
+                </th>
+                <td><textarea rows="5" ></textarea>
+                </td>             
+            </tr>
+            <tr>
+                <th><label for="session">Select session</label>
+                <td> <input type="checkbox" name="terms" id="terms">Session 1
+                 <input type="checkbox" name="terms" id="terms">Session 2
+                <input type="checkbox" name="terms" id="terms">Session 3
+                 <input type="checkbox" name="terms" id="terms">Session 4</td>
+
+            </tr>
+          
+          <tr>
+             <td> <input type="checkbox">I have filled the form correctly to the best of my knowledge</td>
+      </tr>
+      <tr>
+             <td> <input type="submit"></td>
+             <td> <input type="reset"></td>
+
+          </tr>
+
+        </form>
+    </table>
+</body>
+</html>
